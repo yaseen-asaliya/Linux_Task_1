@@ -27,7 +27,7 @@ note that this should be implemented on the second disk <br>
 # mkdir /mnt/data
 # mount /dev/vg1/lvm1 /mnt/data 
 ```
-<br>
+
 ### Part 2: users, groups and permissions
 
 ### Part 3: SSH
