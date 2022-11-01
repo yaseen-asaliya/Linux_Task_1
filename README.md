@@ -10,26 +10,22 @@ note that this should be implemented on the second disk
   # pvcreate /dev/sdb1 /dev/sdb2
 ```
 
-* Create a volum group with 16M extends
+3. Create a volum group with 16M extends
 ```
   # vgcreate -s 16M vg1 /dev/sdb1 /dev/sdb2
 ```
 
-* Create Logical Volume with 50M extends from Volum Group
+4 Create Logical Volume with 50M extends from Volum Group
 ```
   # lvcreate -L +50M -n lvm1 /dev/vg1
 ```
 
-* Make LV as ext4 file system and mount it to /mnt/data
+5 Make LV as ext4 file system and mount it to /mnt/data
 ```
 # mkfs -t ext4 /dev/vg1/lvm1 
 # mkdir /mnt/data
 # mount /dev/vg1/lvm1 /mnt/data 
 ```
-
- James Madison
-2. James Monroe
-3. John Quincy Adams
 
 ### Part 2: Users, Groups and Permissions
 
