@@ -6,7 +6,7 @@ volume group lv, make it as ext4 file system, and mounted automatically under /m
 note that this should be implemented on the second disk.**
 <br><br>
 ***Solution:***
-* First, I added a new disk manually, then i created 2 partitions.
+* The first step is to add a new disk manually to the VM, then create 2 partitions.
 * Create a physical volume for each partition
 ```
   # pvcreate /dev/sdb1 /dev/sdb2
