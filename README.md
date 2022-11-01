@@ -5,12 +5,12 @@ volume group lv, make it as ext4 file system, and mounted automatically under /m
 note that this should be implemented on the second disk <br>
 
 * First, I added a new disk manually, then i created 2 partitions.
-* Create a Physical Volume
+* Create a Physical Volume for each partition
 <code>
   # pvcreate /dev/sdb1 /dev/sdb2
 </code>
 <br>
-* 
+*  
 
 <code>
   # vgcreate -s 16M vg1 /dev/sdb1 /dev/sdb2
