@@ -4,8 +4,7 @@
 volume group lv, make it as ext4 file system, and mounted automatically under /mnt/data. Please
 note that this should be implemented on the second disk <br>
 
-1 First, I added a new disk manually, then i created 2 partitions.
-
+1. First, I added a new disk manually, then i created 2 partitions.
 2. Create a physical volume for each partition
 ```
   # pvcreate /dev/sdb1 /dev/sdb2
