@@ -10,12 +10,20 @@ note that this should be implemented on the second disk <br>
   # pvcreate /dev/sdb1 /dev/sdb2
 </code>
 <br>
-- gg
+* 
 
 <code>
   # vgcreate -s 16M vg1 /dev/sdb1 /dev/sdb2
+</code>
+<code>
   # lvcreate -L +50M -n lvm1 /dev/vg1
+</code>
+<code>
   # mkfs -t ext4 /dev/vg1/lvm1 
-  # mkdir /mnt/data <br>
-  # mount /dev/vg1/lvm1 /mnt/data 
-  <code>
+</code>
+<code>
+  # mkdir /mnt/data
+</code>
+<code>
+ # mount /dev/vg1/lvm1 /mnt/data 
+</code>
