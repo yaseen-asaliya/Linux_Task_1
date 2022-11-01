@@ -90,10 +90,10 @@ ssh-keygen -t rsa
 ```
 * Copy the key to the destination system (other VM)
 ```
-#  cd /root/.ssh
+# cd /root/.ssh
 # ssh-copy-id -i id_rsa.pub root@127.0.0.20
 ```
-* To connect with other VM by `SSH` key
+* To connect with other VM using `SSH` key
 ```
 # ssh root@127.0.0.20
 ```
