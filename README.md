@@ -98,7 +98,30 @@ ssh-keygen -t rsa
 # ssh root@127.0.0.20
 ```
 
+
+
+
+
 ## Part 4: Permissions
+__Copy /etc/fstab to /var/tmp name admin, the user1 could read, write and modify it, while user2 can’t do
+any permission.__
+<br><br>
+***Solution:***
+* Copy file from `/etc/fstab` to `/var/tmp` named admin
+```
+# cp /etc/fstab /var/tmp/admin
+```
+* Set permission to `user1` to read, write, and modify
+```
+# setfacl -m u:user1:rw- /var/tmp/admin
+```
+* Remove all permissions for `user2`
+```
+# setfacl -m u:user2:--- /var/tmp/admin
+```
+
+
+
 
 ## Part 5: Permissions
 
