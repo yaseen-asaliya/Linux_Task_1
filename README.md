@@ -5,7 +5,7 @@ volume group lv, make it as ext4 file system, and mounted automatically under /m
 note that this should be implemented on the second disk.**
 <br><br>
 ***Solution:***
-* The first step is to add a new disk manually to the VM, then create 2 partitions.
+* The first step is to add a new disk manually to the VM, then create 2 partitions inside disk.
 * Create a physical volume for each partition
 ```
   # pvcreate /dev/sdb1 /dev/sdb2
@@ -21,7 +21,7 @@ note that this should be implemented on the second disk.**
   # lvcreate -L +50M -n lvm1 /dev/vg1
 ```
 
-* Make LV as ext4 file system and mount it to /mnt/data
+* Make LV as ext4 file system and mount it to `/mnt/data`
 ```
 # mkfs -t ext4 /dev/vg1/lvm1 
 # mkdir /mnt/data
