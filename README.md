@@ -21,7 +21,7 @@ note that this should be implemented on the second disk <br>
   # lvcreate -L +50M -n lvm1 /dev/vg1
 ```
 
-* Make LV as ext4 file system and mount it to directory
+* Make LV as ext4 file system and mount it to /mnt/data
 ```
 # mkfs -t ext4 /dev/vg1/lvm1 
 # mkdir /mnt/data
