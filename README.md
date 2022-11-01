@@ -6,7 +6,7 @@ note that this should be implemented on the second disk <br>
 
 * First, I added a new disk manually, then i created 2 partitions.
 
-* Create a physical volume for each partition
+** Create a physical volume for each partition
 ```
   # pvcreate /dev/sdb1 /dev/sdb2
 ```
