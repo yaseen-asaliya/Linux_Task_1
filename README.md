@@ -1,5 +1,5 @@
 # Linux_Task_1
-## Part 1:
+### Part 1:
 Create a volume group, and set 16M as extends. And divided a volume group containing 50 extends on
 volume group lv, make it as ext4 file system, and mounted automatically under /mnt/data. Please
 note that this should be implemented on the second disk <br>
@@ -27,4 +27,13 @@ note that this should be implemented on the second disk <br>
 # mkdir /mnt/data
 # mount /dev/vg1/lvm1 /mnt/data 
 ```
-
+<br>
+### Part 2:
+### Part 3:
+### Part 4:
+### Part 5:
+### Part 6:
+### Part 7:
+### Part 8:
+### Part 9:
+### Part 10:
