@@ -221,7 +221,7 @@ echo " " >> /tmp/activeusers
 2. open ports in iptables from mariadb.
 3. create database , user(note: handle permissions).
 4. connect to the database created in step 3 using the new user (with password)
-.<br>
+.<br><br>
 __Example schema :
 Create a MariaDB database called studentdb on rhce1 and add ten records each containing “student
 firstname” (Allen, David, Mary, Dennis, Joseph, Dennis, Ritchie, Robert, David, and Mary), “student
