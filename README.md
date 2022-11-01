@@ -51,11 +51,17 @@ note that this should be implemented on the second disk._
 ```
 # adduser user2
 # adduser user3
+```
+* Set password for `user2` and `user3`
+```
+# passwd user2
+# passwd user3
+```
+* Create and set both users in `admin` group
+```
 # groupadd admin
 # usermod -g admin user2
 # usermod -g admin user3
-# passwd user2
-# passwd user3
 ```
 
 * Set root permissions for user3
