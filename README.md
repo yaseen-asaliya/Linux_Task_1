@@ -28,6 +28,12 @@ note that this should be implemented on the second disk._
 # mount /dev/vg1/lvm1 /mnt/data 
 ```
 
+
+
+
+
+
+
 ## Part 2: Users, Groups and Permissions
 
 1. Add user: user1, set uid=601 Password: redhat. The user's login shell should be non-interactive. (no ssh access to server).
@@ -69,18 +75,39 @@ note that this should be implemented on the second disk._
 #  usermod -G root user3
 ```
 
+
+
+
+
+
 ## Part 3: SSH
+__Generate SSH key and connect to different VM without password.__
+<br><br>
+***Solution:***
+* Genarate `SSH` key and store it in `/root/.ssh`
+```
+ssh-keygen -t rsa
+```
+* Copy the key to the destination system (other VM)
+```
+#  cd /root/.ssh
+# ssh-copy-id -i id_rsa.pub root@127.0.0.20
+```
+* To connect with other VM by `SSH` key
+```
+# ssh root@127.0.0.20
+```
 
-### Part 4: Permissions
+## Part 4: Permissions
 
-### Part 5: Permissions
+## Part 5: Permissions
 
-### Part 6: Bash script and processes
+## Part 6: Bash script and processes
 
-### Part 7: Yum Repo
+## Part 7: Yum Repo
 
-### Part 8: Network management
+## Part 8: Network management
 
-### Part 9: Cronjob
+## Part 9: Cronjob
 
-### Part 10: Mariadb
+## Part 10: Mariadb
