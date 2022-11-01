@@ -15,12 +15,12 @@ note that this should be implemented on the second disk
   # vgcreate -s 16M vg1 /dev/sdb1 /dev/sdb2
 ```
 
-4 Create Logical Volume with 50M extends from Volum Group
+4. Create Logical Volume with 50M extends from Volum Group
 ```
   # lvcreate -L +50M -n lvm1 /dev/vg1
 ```
 
-5 Make LV as ext4 file system and mount it to /mnt/data
+5. Make LV as ext4 file system and mount it to /mnt/data
 ```
 # mkfs -t ext4 /dev/vg1/lvm1 
 # mkdir /mnt/data
