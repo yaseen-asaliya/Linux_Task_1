@@ -172,6 +172,14 @@ echo "working...."
 
 ## Part 8: Network management
 
+
+
+
 ## Part 9: Cronjob
+__Create a cronjob that will run at 1:30 AM every day and collect the users logged in and save them in a file<br>
+Format : timestamp – users__
+<br><br>
+***Solution:***
+
 
 ## Part 10: Mariadb
