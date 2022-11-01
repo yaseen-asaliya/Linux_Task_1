@@ -5,5 +5,10 @@ volume group lv, make it as ext4 file system, and mounted automatically under /m
 note that this should be implemented on the second disk <br>
 
 <code>
-  sd
-  </code>
+  # pvcreate /dev/sdb1 /dev/sdb2
+  # vgcreate -s 16M vg1 /dev/sdb1 /dev/sdb2
+  # lvcreate -L +50M -n lvm1 /dev/vg1
+  # mkfs -t ext4 /dev/vg1/lvm1
+  # mkdir /mnt/data
+  #  mount /dev/vg1/lvm1 /mnt/data
+</code>
