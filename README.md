@@ -176,10 +176,28 @@ echo "working...."
 
 
 ## Part 9: Cronjob
-__Create a cronjob that will run at 1:30 AM every day and collect the users logged in and save them in a file<br>
+__Create a cronjob that will run at 1:30 AM every day and collect the users logged in and save them in a file.<br>
 Format : timestamp – users__
 <br><br>
 ***Solution:***
+* Open cronjob file
+```
+crontab -e
+```
+* Insert command inside cronjob file to execute 'myscript.sh` file every day at 1:30 AM
+```
+30 01 * * * /tmp/myscript.sh
+```
+* Create and open 'myscript.sh` file
+```
+# vi /tmp/myscript.sh
+```
+* Insert code to get all logged in users and current timestamp and save the informatio inside `activeusers` file
+```
+echo "Time: $(date) - Active Users: $(who -q)" >> /tmp/activeusers 2> /tmp/error
+echo " " >> /tmp/activeusers
+```
+
 
 
 ## Part 10: Mariadb
