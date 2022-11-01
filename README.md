@@ -31,8 +31,27 @@ note that this should be implemented on the second disk._
 ### Part 2: Users, Groups and Permissions
 
 1. Add user: user1, set uid=601 Password: redhat. The user's login shell should be non-interactive. (no ssh access to server).
+```
+# adduser user1 -s /sbin/nologin
+# usermod -u 601 user1
+# passwd user1
+```
 2. Add user1 to group TrainingGroup.
+```
+# addgroup TrainingGroup
+# usermod -g TrainingGroup user1
+```
 3. Add users: user2, user3. The Additional group of the two users: user2, user3 is the admin group Password: redhat, user 3 with root permissions.
+```
+# adduser user2
+# adduser user3
+# groupadd admin
+# usermod -g admin user2
+# usermod -g admin user3
+# passwd user2
+# passwd user3
+#  usermod -G root user3
+```
 <br><br>
 ***Solution:***
 * Create non-interactive user (user1) with `uid=601` and `password=redhat`
