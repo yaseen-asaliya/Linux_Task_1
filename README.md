@@ -111,7 +111,7 @@ any permission.__
 ```
 # cp /etc/fstab /var/tmp/admin
 ```
-* Set permission to `user1` to read, write, and modify
+* Set read, write, and modify permissions to `user1`
 ```
 # setfacl -m u:user1:rw- /var/tmp/admin
 ```
