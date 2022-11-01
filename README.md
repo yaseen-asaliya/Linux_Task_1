@@ -30,7 +30,7 @@ note that this should be implemented on the second disk._
 
 ### Part 2: Users, Groups and Permissions
 ***
-__1. Add user: user1, set uid=601 Password: redhat. The user's login shell should be non-interactive. (no ssh access to server) <br>
+__/t1. Add user: user1, set uid=601 Password: redhat. The user's login shell should be non-interactive. (no ssh access to server) <br>
 2. Add user1 to group TrainingGroup. <br>
 3. Add users: user2, user3. The Additional group of the two users: user2, user3 is the admin group Password: redhat, user 3 with root permissions__
 
