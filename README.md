@@ -8,6 +8,7 @@ note that this should be implemented on the second disk <br>
 <code>
   # pvcreate /dev/sdb1 /dev/sdb2
 </code>
+<br>
 
 <code>
   # vgcreate -s 16M vg1 /dev/sdb1 /dev/sdb2
