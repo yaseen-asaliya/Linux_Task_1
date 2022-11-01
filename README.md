@@ -27,6 +27,10 @@ note that this should be implemented on the second disk <br>
 # mount /dev/vg1/lvm1 /mnt/data 
 ```
 
+1. James Madison
+2. James Monroe
+3. John Quincy Adams
+
 ### Part 2: Users, Groups and Permissions
 
 ### Part 3: SSH
