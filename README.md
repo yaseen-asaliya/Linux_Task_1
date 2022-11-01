@@ -4,11 +4,14 @@ Create a volume group, and set 16M as extends. And divided a volume group contai
 volume group lv, make it as ext4 file system, and mounted automatically under /mnt/data. Please
 note that this should be implemented on the second disk <br>
 
-- Create a volume group
+1 First, I added a new disk manually, then i created 2 partitions.
+2 Create a Physical Volume
 <code>
   # pvcreate /dev/sdb1 /dev/sdb2
+  > 
 </code>
 <br>
+- 
 
 <code>
   # vgcreate -s 16M vg1 /dev/sdb1 /dev/sdb2
