@@ -47,7 +47,7 @@ note that this should be implemented on the second disk._
 # usermod -g TrainingGroup user1
 ```
 
-* Create user2 and user3 
+* Create user2 and user3, and set password for them, and set them in admin group
 ```
 # adduser user2
 # adduser user3
