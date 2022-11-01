@@ -111,7 +111,7 @@ any permission.__
 ```
 # cp /etc/fstab /var/tmp/admin
 ```
-* Set read, write, and modify permissions to `user1`
+* Set read, write, and modify permissions for `user1`
 ```
 # setfacl -m u:user1:rw- /var/tmp/admin
 ```
@@ -124,8 +124,49 @@ any permission.__
 
 
 ## Part 5: Permissions
+__SELinux must be running in the Enforcing mode (permanent even after reboot).__
+<br><br>
+***Solution:***
+
+
+
+
+
 
 ## Part 6: Bash script and processes
+__Write a shell script that will keep running for 10 mins in the background and check the process that it's
+created and try to kill using commands.__
+<br><br>
+***Solution:***
+* Create scripts file
+```
+# vi /var/tmp/scripts.sh
+```
+* Insert commands in file to keep running in background for 10min
+
+```
+#!/bin/bash
+echo "scripts start execution"
+sleep 10m &
+echo "working...."
+```
+* Make file starts running
+```
+# chmod +x /var/tmp/scripts.sh
+# ./var/tmp
+```
+* View all active process (to get process id)
+```
+# ps
+```
+* to kill the process `(pid=6483)`
+```
+# kill -15 6483 
+```
+
+
+
+
 
 ## Part 7: Yum Repo
 
