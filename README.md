@@ -16,7 +16,7 @@ note that this should be implemented on the second disk._
   # vgcreate -s 16M vg1 /dev/sdb1 /dev/sdb2
 ```
 
-* Create Logical Volume with 50M extends from Volum Group
+* Create Logical Volume 50M extends from Volum Group
 ```
   # lvcreate -L +50M -n lvm1 /dev/vg1
 ```
@@ -30,9 +30,11 @@ note that this should be implemented on the second disk._
 
 ### Part 2: Users, Groups and Permissions
 ***
-**1. Add user: user1, set uid=601 Password: redhat. The user's login shell should be non-interactive. (no ssh access to server) <br>
+__
+1. Add user: user1, set uid=601 Password: redhat. The user's login shell should be non-interactive. (no ssh access to server) <br>
 2. Add user1 to group TrainingGroup. <br>
-3. Add users: user2, user3. The Additional group of the two users: user2, user3 is the admin group Password: redhat, user 3 with root permissions**
+3. Add users: user2, user3. The Additional group of the two users: user2, user3 is the admin group Password: redhat, user 3 with root permissions
+__
 
 ### Part 3: SSH
 
