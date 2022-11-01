@@ -1,5 +1,5 @@
 # Linux_Task_1
-### Part 1: LVM
+## Part 1: LVM
 _Create a volume group, and set 16M as extends. And divided a volume group containing 50 extends on
 volume group lv, make it as ext4 file system, and mounted automatically under /mnt/data. Please
 note that this should be implemented on the second disk._
@@ -28,7 +28,7 @@ note that this should be implemented on the second disk._
 # mount /dev/vg1/lvm1 /mnt/data 
 ```
 
-### Part 2: Users, Groups and Permissions
+## Part 2: Users, Groups and Permissions
 
 1. Add user: user1, set uid=601 Password: redhat. The user's login shell should be non-interactive. (no ssh access to server).
 2. Add user1 to group TrainingGroup.
@@ -59,7 +59,7 @@ note that this should be implemented on the second disk._
 #  usermod -G root user3
 ```
 
-### Part 3: SSH
+## Part 3: SSH
 
 ### Part 4: Permissions
 
