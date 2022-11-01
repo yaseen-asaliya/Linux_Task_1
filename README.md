@@ -8,7 +8,7 @@ note that this should be implemented on the second disk <br>
 2. Create a Physical Volume
 <code>
   # pvcreate /dev/sdb1 /dev/sdb2
-  > 
+  > ss
 </code>
 <br>
 - 
