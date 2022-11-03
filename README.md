@@ -75,7 +75,7 @@ note that this should be implemented on the second disk._
 ```
 #  vi /etc/passwd
 ```
-* Make it as shown below 
+* Make it as shown below <br>
 ![image](https://user-images.githubusercontent.com/59315877/199723642-f86e8a39-6477-4571-873d-08c2444489b0.png)
 
 
