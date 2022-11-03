@@ -127,8 +127,11 @@ any permission.__
 __SELinux must be running in the Enforcing mode (permanent even after reboot).__
 <br><br>
 ***Solution:***
-
-
+* Go to `/etc/selinux/config` file
+```
+# vi /etc/selinux/config
+```
+* Change SELINUX value to be SELINUX=enforcing
 
 
 
