@@ -137,6 +137,12 @@ __SELinux must be running in the Enforcing mode (permanent even after reboot).__
 ```
 # reboot
 ```
+* To verify changes use `getenforce` command 
+```
+# getenforce
+```
+* The output should be as shown
+![ss](https://user-images.githubusercontent.com/59315877/199684315-3149b635-b977-490c-8179-70b5eab94140.png)
 
 
 
