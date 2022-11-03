@@ -134,7 +134,7 @@ __SELinux must be running in the Enforcing mode (permanent even after reboot).__
 ```
 # vi /etc/selinux/config
 ```
-* Change `SELINUX` value to be `SELINUX=enforcing` as shown below
+* Change `SELINUX` value to be `SELINUX=enforcing` as shown below <br>
 ![unnamed](https://user-images.githubusercontent.com/59315877/199683157-11cba0bc-f9e5-43b3-91aa-47f27ffbffc9.png)
 * Save the changes, and restart the VM 
 ```
@@ -144,7 +144,7 @@ __SELinux must be running in the Enforcing mode (permanent even after reboot).__
 ```
 # getenforce
 ```
-* The output should be as shown
+* The output should be as shown <br>
 ![ss](https://user-images.githubusercontent.com/59315877/199684315-3149b635-b977-490c-8179-70b5eab94140.png)
 
 
