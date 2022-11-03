@@ -70,10 +70,13 @@ note that this should be implemented on the second disk._
 # usermod -g admin user3
 ```
 
-* Set root permissions for user3
+* Set root permissions for user3 
+> open passwd file
 ```
-#  usermod -G root user3
+#  vi /etc/passwd
 ```
+* Make it as shown below
+![image](https://user-images.githubusercontent.com/59315877/199723642-f86e8a39-6477-4571-873d-08c2444489b0.png)
 
 
 
