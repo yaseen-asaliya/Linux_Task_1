@@ -21,15 +21,25 @@ note that this should be implemented on the second disk._
   # lvcreate -L +50M -n lvm1 /dev/vg1
 ```
 
-* Make LV as ext4 file system and mount it to `/mnt/data`
+* Make LV as ext4 file system 
 ```
 # mkfs -t ext4 /dev/vg1/lvm1 
-# mkdir /mnt/data
-# mount /dev/vg1/lvm1 /mnt/data 
 ```
-
-
-
+* To mount `/dev/vg1/lvm1` sudo blkid under `/mnt/data`
+> Get the id of LV 
+```
+sudo blkid
+```
+> Create empty directory
+```
+# mkdir /mnt/data
+```
+> go to `nano /etc/fstab` and add this line, then save changes
+![image](https://user-images.githubusercontent.com/59315877/200141694-7440873d-fc70-4efa-9968-d4f2c4429754.png)
+> Verify the mounting using below command
+```
+# df -l
+```
 
 
 
