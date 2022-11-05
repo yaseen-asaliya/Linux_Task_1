@@ -35,8 +35,9 @@ sudo blkid
 # mkdir /mnt/data
 ```
 > go to `nano /etc/fstab` and add this line, then save changes 
-<br>
+>
 ![image](https://user-images.githubusercontent.com/59315877/200141694-7440873d-fc70-4efa-9968-d4f2c4429754.png)
+
 > Verify the mounting using below command
 ```
 # df -l
