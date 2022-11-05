@@ -36,7 +36,7 @@ sudo blkid
 ```
 > go to `nano /etc/fstab` and add this line, then save changes 
 >
-![image](https://user-images.githubusercontent.com/59315877/200141694-7440873d-fc70-4efa-9968-d4f2c4429754.png)
+![image](https://user-images.githubusercontent.com/59315877/200141949-d7a8e417-9674-4207-981c-2e0add49eaf8.png)
 
 > Verify the mounting using below command
 ```
