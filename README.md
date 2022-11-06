@@ -218,7 +218,19 @@ zabbix-agent rpm’s and their dependencies)
 3. Block ssh connection for your colleague ip to the VM.
 <br><br>
 ***Solution:***
-
+* Open port 80 permanent
+```
+# firewall-cmd --zone=public --add-port=80/tcp --permanent
+```
+* Open port 443 permanent
+```
+# firewall-cmd --zone=public --add-port=443/tcp --permanent
+```
+* Block ssh connection for client with `ip=10.0.2.11`
+```
+# firewall-cmd --permanent --add-rich-rule="rule family='ipv4' source address='10.0.2.11' reject"
+# firewall-cmd --reload
+```
 
 ## Part 9: Cronjob
 __Create a cronjob that will run at 1:30 AM every day and collect the users logged in and save them in a file.<br>
