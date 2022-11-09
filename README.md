@@ -207,10 +207,68 @@ https://repo.zabbix.com/zabbix/4.4/rhel/7/x86_64/
 zabbix-agent rpm’s and their dependencies)
 <br><br>
 ***Solution:***
+* Install tmux, httpd, and mysql and start apache server
+```
+#  yum install tmux
+#  yum install httpd
+# systemctl start httpd
+#  yum install mysql
+```
+* Install helpful packages to create repos
+```
+# yum install createrepo 
+# yum install yum-utils
+```
+* Create local repository
+> Create new direcory
+```
+# mkdir /var/www/html/repos/
+# mkdir –p /var/www/html/repos/{base,centosplus,extras,updates}
+```
+> Synchronize HTTP Repositories
+```
+# sudo reposync -g -l -d -m --repoid=base --newest-only --download-metadata --download_path=/var/www/html/repos/
 
+# sudo reposync -g -l -d -m --repoid=centosplus --newest-only --download-metadata --download_path=/var/www/html/repos/
 
+# sudo reposync -g -l -d -m --repoid=extras --newest-only --download-metadata --download_path=/var/www/html/repos/
 
-
+# sudo reposync -g -l -d -m --repoid=updates --newest-only --download-metadata --download_path=/var/www/html/repos/
+```
+> Create a new repo
+```
+# createrepo /var/www/html
+```
+> Move yum repos to tmp directory 
+```
+# mv /etc/yum.repos.d/*.repo /tmp/
+```
+* Go to `nano /etc/yum.repos.d/remote.repo` and write the below commands
+```
+[remote]
+name=RHEL Apache
+baseurl=http://127.0.0.10
+enabled=1
+gpgcheck=0
+```
+* Disable all repository except the new one
+```
+# yum-config-manager --disable \*
+# yum-config-manager --enable remote
+```
+* Setup Zabbix
+```
+# yum remove zabbix-release
+# yum install http://repo.zabbix.com/zabbix/3.2/rhel/7/x86_64/zabbix-release-3.2-1.el7.noarch.rpm
+# yum clean all
+```
+* Setup Zabbix rpms on new repository
+```
+yum install zabbix-server-mysql
+yum install zabbix-web-mysql
+yum install zabbix-agent
+yum install php
+```
 
 ## Part 8: Network management
 1. Open port 443 , 80
