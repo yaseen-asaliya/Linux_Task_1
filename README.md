@@ -83,13 +83,14 @@ sudo blkid
 ```
 
 * Set root permissions for user3 
-> open passwd file
+> Open `/etc/sudoers` using the below command
 ```
-#  vi /etc/passwd
+#  visudo
 ```
-* Make it as shown below <br>
-![image](https://user-images.githubusercontent.com/59315877/199723642-f86e8a39-6477-4571-873d-08c2444489b0.png)
-
+* Then add this line inside file
+```
+user3 ALL=(ALL) ALL
+```
 
 
 
