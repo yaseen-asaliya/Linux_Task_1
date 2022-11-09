@@ -264,10 +264,10 @@ gpgcheck=0
 ```
 * Setup Zabbix rpms on new repository
 ```
-yum install zabbix-server-mysql
-yum install zabbix-web-mysql
-yum install zabbix-agent
-yum install php
+# yum install zabbix-server-mysql
+# yum install zabbix-web-mysql
+# yum install zabbix-agent
+# yum install php
 ```
 
 ## Part 8: Network management
@@ -329,3 +329,84 @@ mechanical, 3 x electrical,and 4 x computer science), expected graduation year (
 2020), and a student number (110-001 to 110-010)__
 <br><br>
 ***Solution:***
+* install mariadb and create file to set it's configrations
+```
+# yum install mariadb-server
+# touch /etc/yum.repos.d/MariaDB.repo
+```
+> inside the new file created write these commands
+```
+[mariadb]
+name = MariaDB
+baseurl = http://yum.mariadb.org/10.3/centos7-amd64
+gpgkey=https://yum.mariadb.org/RPM-GPG-KEY-MariaDB
+gpgcheck=1
+```
+> Set another configrations and start mariadb
+```
+# yum install MariaDB-server MariaDB-client
+# systemctl enable mariadb
+# systemctl stratus mariadb
+```
+> Set new password for connection (NOTE:Answer [y] yes for all choices)
+```
+# mysql_secure_installation
+```
+> To verify connection use this command (user the password that we created previously)
+```
+# mysql -u root -p
+```
+* Open port from the mariadb to be accessible from clients
+```
+
+```
+* Set same configration in client side 
+* Create database
+```
+MariaDB> CREATE DATABASE studentdb;
+```
+* Create user `rhce1` with password `123` from client on client (his name is `client.example.com`)
+```
+MariaDB> create user ‘rhce1’@client.example.com IDENTIFIED BY '123';
+```
+* Set privlesges for `rhce1` to `studentdb`
+```
+MariaDB> GRANT ALL PRIVILEGES ON ‘studentdb’.* TO rhce1@client.example.com;
+```
+* Create require records
+> Use database
+```
+MariaDB> use studentdb
+```
+> Create table to stored records
+```
+MariaDB> create table information (
+	student_number varchar(255) not null,
+	student_first_name varchar(255),
+	student_last_name varchar(255),
+	program_enrolled varchar(255),
+	graduation_year int,
+  primary key(student_number)
+);
+```
+> Stored data inside table
+```
+MariaDB> INSERT INTO information
+  (student_number, student_first_name,student_last_name,graduation_year,program_enrolled)
+VALUES
+  ('110-001','Allen','Brown',2017,'mechanical'),
+  ('110-002','David','Brown',2017,'mechanical'),
+  ('110-003','Mary','Green',2018,'mechanical'),
+  ('110-004','Dennis','Green',2018,'electrical'),
+  ('110-005','Joseph','Black',2018,'electrical'),
+  ('110-006','Dennis','Black',2020,'electrical'),
+  ('110-007','Ritchie','Salt',2020,'computer science'),
+  ('110-008','Robert','Salt',2020,'computer science'),
+  ('110-009','David','Suzuki',2020,'computer science'),
+  ('110-010','Mary','Chen',2020,'computer science');
+```
+
+
+
+
+
