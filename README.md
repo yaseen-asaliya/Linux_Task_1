@@ -353,26 +353,32 @@ gpgcheck=1
 ```
 # mysql_secure_installation
 ```
-> To verify connection use this command (user the password that we created previously)
+> To login in mariadb (user the password that we created previously)
 ```
 # mysql -u root -p
 ```
 * Open port from the mariadb to be accessible from clients
+> Create a new remotely user with 2nd VM ip with permissions
 ```
-
+MariaDB> GRANT ALL PRIVILEGES ON *.* TO 'rhce1'@'127.0.0.20' IDENTIFIED BY '123' WITH GRANT OPTION;
 ```
-* Set same configration in client side 
+> Flush prevlileges
+```
+MariaDB> FLUSH PRIVILEGES;
+```
+> Open the port and reload the firewall
+```
+# sudo firewall-cmd --permanent --add-port=3306/tcp
+# sudo firewall-cmd --reload
+```
+> To check if remote connection works
+```
+# mysql -h 127.0.0.20 -P 3306 -u rhce1 -p
+```
+* Go to the client VM and make require steps and login using the new user `rhce1`
 * Create database
 ```
 MariaDB> CREATE DATABASE studentdb;
-```
-* Create user `rhce1` with password `123` from client on client (his name is `client.example.com`)
-```
-MariaDB> create user ‘rhce1’@client.example.com IDENTIFIED BY '123';
-```
-* Set privlesges for `rhce1` to `studentdb`
-```
-MariaDB> GRANT ALL PRIVILEGES ON ‘studentdb’.* TO rhce1@client.example.com;
 ```
 * Create require records
 > Use database
