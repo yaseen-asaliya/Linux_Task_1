@@ -84,7 +84,7 @@ sudo blkid
 
 * Set root permissions for user3 
 ```
-# usermod -a -G admin,wheel user3
+# usermod -a -G wheel user3
 ```
 
 
