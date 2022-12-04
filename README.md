@@ -83,13 +83,8 @@ sudo blkid
 ```
 
 * Set root permissions for user3 
-> Open `/etc/sudoers` using the below command
 ```
-#  visudo
-```
-* Then add this line inside file
-```
-user3 ALL=(ALL) ALL
+# usermod -a -G admin,wheel user3
 ```
 
 
