@@ -288,11 +288,11 @@ gpgcheck=0
 > Solution 2 (using Iptables)
 * Open port 80
 ```
-# iptables -I INPUT -p tcp -m tcp --dport 80 -j ACCEPT
+# iptables -I INPUT -p tcp --dport 80 -j ACCEPT
 ```
 * Open port 443
 ```
-# iptables -I INPUT -p tcp -m tcp --dport 443 -j ACCEPT
+# iptables -I INPUT -p tcp --dport 443 -j ACCEPT
 ```
 * Save iptable configuration to `/etc/sysconfig/iptables`
 ```
