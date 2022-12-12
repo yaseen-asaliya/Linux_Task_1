@@ -288,19 +288,19 @@ gpgcheck=0
 > Solution 2 (using Iptables)
 * Open port 80
 ```
-iptables -I INPUT -p tcp -m tcp --dport 80 -j ACCEPT
+# iptables -I INPUT -p tcp -m tcp --dport 80 -j ACCEPT
 ```
 * Open port 443
 ```
-iptables -I INPUT -p tcp -m tcp --dport 443 -j ACCEPT
+# iptables -I INPUT -p tcp -m tcp --dport 443 -j ACCEPT
 ```
 * Save iptable configuration to `/etc/sysconfig/iptables`
 ```
-iptables-save > /etc/sysconfig/iptables
+# iptables-save > /etc/sysconfig/iptables
 ```
 * After reboot u can restore iptables configurations using 
 ```
-iptables-restore < /etc/sysconfig/iptables
+# iptables-restore < /etc/sysconfig/iptables
 ```
 
 
