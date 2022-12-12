@@ -271,7 +271,7 @@ gpgcheck=0
 2. Make the changes permanent
 3. Block ssh connection for your colleague ip to the VM.
 <br><br>
-***Solution:***
+> Solution 1 (using firewall):
 * Open port 80 permanent
 ```
 # firewall-cmd --zone=public --add-port=80/tcp --permanent
@@ -285,6 +285,24 @@ gpgcheck=0
 # firewall-cmd --permanent --add-rich-rule="rule family='ipv4' source address='10.0.2.11' reject"
 # firewall-cmd --reload
 ```
+> Solution 2 (using Iptables)
+* Open port 80
+```
+iptables -I INPUT -p tcp -m tcp --dport 80 -j ACCEPT
+```
+* Open port 443
+```
+iptables -I INPUT -p tcp -m tcp --dport 443 -j ACCEPT
+```
+* Save iptable configuration to `/etc/sysconfig/iptables`
+```
+iptables-save > /etc/sysconfig/iptables
+```
+* After reboot u can restore iptables configurations using 
+```
+iptables-restore < /etc/sysconfig/iptables
+```
+
 
 ## Part 9: Cronjob
 __Create a cronjob that will run at 1:30 AM every day and collect the users logged in and save them in a file.<br>
