@@ -384,7 +384,7 @@ gpgcheck=1
 ```
 # yum install MariaDB-server MariaDB-client
 # systemctl enable mariadb
-# systemctl stratus mariadb
+# systemctl status mariadb
 ```
 > Set new password for connection (NOTE:Answer [y] yes for all choices)
 ```
@@ -403,7 +403,12 @@ MariaDB> GRANT ALL PRIVILEGES ON *.* TO 'rhce1'@'127.0.0.20' IDENTIFIED BY '123'
 ```
 MariaDB> FLUSH PRIVILEGES;
 ```
-> Open the port and reload the firewall
+> Open the mariadb port using iptables
+```
+# iptables -I INPUT -p tcp --dport 3306 -j ACCEPT
+# iptables-save > /etc/sysconfig/iptables
+```
+> Open the mariadb port using firewall
 ```
 # sudo firewall-cmd --permanent --add-port=3306/tcp
 # sudo firewall-cmd --reload
