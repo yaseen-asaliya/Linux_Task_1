@@ -202,6 +202,19 @@ https://repo.zabbix.com/zabbix/4.4/rhel/7/x86_64/
 5. Install zabbix rpms from the new repo (Download zabbix, zabbix-web,php, zabbix-server,
 zabbix-agent rpm’s and their dependencies)
 <br><br>
+* Install tmux, httpd, and mysql and start apache server
+```
+#  yum install tmux
+#  yum install httpd
+# systemctl start httpd
+#  yum install mysql
+```
+* Install helpful packages to create repos
+```
+# yum install createrepo 
+# yum install yum-utils
+```
+* Create local repository
 > Solution (1)
 ```
 mkdir /var/www/html/localrepo
@@ -227,19 +240,6 @@ yum-config-manager --enable localrepo
 # yum install php
 ```
 > Solution (2)
-* Install tmux, httpd, and mysql and start apache server
-```
-#  yum install tmux
-#  yum install httpd
-# systemctl start httpd
-#  yum install mysql
-```
-* Install helpful packages to create repos
-```
-# yum install createrepo 
-# yum install yum-utils
-```
-* Create local repository
 > Create new direcory
 ```
 # mkdir /var/www/html/repos/
