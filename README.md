@@ -217,13 +217,13 @@ zabbix-agent rpm’s and their dependencies)
 * Create local repository
 > Solution (1)
 ```
-mkdir /var/www/html/localrepo
-cd /var/www/html/localrepo
-wget https://repo.zabbix.com/zabbix/4.4/rhel/7/x86_64/
-yum install http://repo.zabbix.com/zabbix/3.2/rhel/6/x86_64/zabbix-release-3.2-1.el6.noarch.rpm
-createrepo /var/www/html/localrepo
+# mkdir /var/www/html/localrepo
+# cd /var/www/html/localrepo
+# wget https://repo.zabbix.com/zabbix/4.4/rhel/7/x86_64/
+# yum install http://repo.zabbix.com/zabbix/3.2/rhel/6/x86_64/zabbix-release-3.2-1.el6.noarch.rpm
+# createrepo /var/www/html/localrepo
 
-nano /etc/yum.repos.d/localrepo.repo
+# nano /etc/yum.repos.d/localrepo.repo
 **
 [localrepo]
 name=Apache
@@ -232,13 +232,14 @@ enabled=1
 gpgcheck=0
 ** 
 
-yum-config-manager --disable \*
-yum-config-manager --enable localrepo
+# yum-config-manager --disable \*
+# yum-config-manager --enable localrepo
 
-# yum install zabbix-server-mysql
-# yum install zabbix-web-mysql
-# yum install zabbix-agent
-# yum install php 
+
+# yum --enablerepo=localrepo install zabbix-server-mysql
+# yum --enablerepo=localrepo install zabbix-web-mysql
+# yum --enablerepo=localrepo install zabbix-agent
+# yum --enablerepo=localrepo install php 
 ```
 > Solution (2)
 > Create new direcory
@@ -285,10 +286,10 @@ gpgcheck=0
 ```
 * Setup Zabbix rpms on new repository
 ```
-# yum --enablerepo=localrepo install zabbix-server-mysql
-# yum --enablerepo=localrepo install zabbix-web-mysql
-# yum --enablerepo=localrepo install zabbix-agent
-# yum --enablerepo=localrepo install php
+# yum install zabbix-server-mysql
+# yum install zabbix-web-mysql
+# yum install zabbix-agent
+# yum install php
 ```
 
 ## Part 8: Network management
