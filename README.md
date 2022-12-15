@@ -413,7 +413,6 @@ MariaDB> FLUSH PRIVILEGES;
 # sudo firewall-cmd --permanent --add-port=3306/tcp
 # sudo firewall-cmd --reload
 ```
-* Go to the client VM and make require steps and login using the new user `rhce1`
 * Log in in client to server with ip `10.0.2.10`
 ```
  mysql -h 10.0.2.10 -u root -p
