@@ -397,27 +397,27 @@ gpgcheck=1
 * Open port from the mariadb to be accessible from clients
 > Create a new remotely user with 2nd VM ip with permissions
 ```
-MariaDB> GRANT ALL PRIVILEGES ON *.* TO 'rhce1'@'127.0.0.20' IDENTIFIED BY '123' WITH GRANT OPTION;
+MariaDB> GRANT ALL on *.* TO root@'10.0.2.11' IDENTIFIED BY 'osboxes.org';
 ```
 > Flush prevlileges
 ```
 MariaDB> FLUSH PRIVILEGES;
 ```
-> Open the mariadb port using iptables
+> Open the mariadb port using `iptables`
 ```
 # iptables -I INPUT -p tcp --dport 3306 -j ACCEPT
 # iptables-save > /etc/sysconfig/iptables
 ```
-> Open the mariadb port using firewall
+> Open the mariadb port using `firewall`
 ```
 # sudo firewall-cmd --permanent --add-port=3306/tcp
 # sudo firewall-cmd --reload
 ```
-> To check if remote connection works
-```
-# mysql -h 127.0.0.20 -P 3306 -u rhce1 -p
-```
 * Go to the client VM and make require steps and login using the new user `rhce1`
+* Log in in client to server with ip `10.0.2.10`
+```
+ mysql -h 10.0.2.10 -u root -p
+```
 * Create database
 ```
 MariaDB> CREATE DATABASE studentdb;
