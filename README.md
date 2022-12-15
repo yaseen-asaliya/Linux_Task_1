@@ -220,6 +220,7 @@ zabbix-agent rpm’s and their dependencies)
 mkdir /var/www/html/localrepo
 cd /var/www/html/localrepo
 wget https://repo.zabbix.com/zabbix/4.4/rhel/7/x86_64/
+yum install http://repo.zabbix.com/zabbix/3.2/rhel/6/x86_64/zabbix-release-3.2-1.el6.noarch.rpm
 createrepo /var/www/html/localrepo
 
 nano /etc/yum.repos.d/localrepo.repo
@@ -237,7 +238,7 @@ yum-config-manager --enable localrepo
 # yum install zabbix-server-mysql
 # yum install zabbix-web-mysql
 # yum install zabbix-agent
-# yum install php
+# yum install php 
 ```
 > Solution (2)
 > Create new direcory
