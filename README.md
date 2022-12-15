@@ -285,10 +285,10 @@ gpgcheck=0
 ```
 * Setup Zabbix rpms on new repository
 ```
-# yum install zabbix-server-mysql
-# yum install zabbix-web-mysql
-# yum install zabbix-agent
-# yum install php
+# yum --enablerepo=localrepo install zabbix-server-mysql
+# yum --enablerepo=localrepo install zabbix-web-mysql
+# yum --enablerepo=localrepo install zabbix-agent
+# yum --enablerepo=localrepo install php
 ```
 
 ## Part 8: Network management
